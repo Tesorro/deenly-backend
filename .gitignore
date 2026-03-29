@@ -1,0 +1,12 @@
+build/
+dist/
+
+logs/
+*.log
+
+.idea/
+/node_modules/
+
+.env
+.env.*
+!.env.example
