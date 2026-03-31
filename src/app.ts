@@ -11,6 +11,7 @@ import { notFoundMiddleware } from "./common/middleware/not-found";
 import { errorHandler } from "./common/middleware/error-handler";
 
 import { logger } from "./config/logger";
+import cookieParser from "cookie-parser";
 
 export const createApp = () => {
   const app = express();
@@ -25,6 +26,7 @@ export const createApp = () => {
 
   /** Парсинг x-www-form-urlencoded для форм */
   app.use(express.urlencoded({ extended: true }));
+  app.use(cookieParser());
 
   /** Добавляем уникальный requestId к каждому запросу */
   app.use(requestIdMiddleware);
